@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="M Fitness Gym — Strength, fitness and personal training in Gondapur, Nawada, Bihar.">
+  <title>M Fitness Gym | Train Hard. Stay Strong.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080909;--card:#111313;--card2:#171919;--text:#f7f7f5;--muted:#a7aaa8;--accent:#d8ff35;--line:rgba(255,255,255,.09);--max:1180px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+    .container{width:min(92%,var(--max));margin:auto}
+    .topbar{background:var(--accent);color:#080909;text-align:center;font-size:13px;font-weight:800;padding:8px}
+    header{position:sticky;top:0;z-index:50;background:rgba(8,9,9,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:Anton,sans-serif;font-size:28px;letter-spacing:.5px}.logo span{color:var(--accent)}
+    .navlinks{display:flex;gap:28px;align-items:center}.navlinks a{font-size:14px;font-weight:700;color:#ddd}.navlinks a:hover{color:var(--accent)}
+    .navcta{background:var(--accent);color:#080909!important;padding:11px 17px;border-radius:7px}
+    .menu{display:none;background:none;border:0;color:white;font-size:27px}
+    .hero{min-height:720px;display:grid;place-items:center;position:relative;overflow:hidden;background:
+      linear-gradient(90deg,rgba(5,6,6,.94) 0%,rgba(5,6,6,.72) 45%,rgba(5,6,6,.28) 100%),
+      url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=2000&q=85') center/cover}
+    .hero:after{content:"";position:absolute;inset:auto 0 0;height:150px;background:linear-gradient(transparent,var(--bg))}
+    .hero-content{position:relative;z-index:2;padding:90px 0;width:100%}
+    .eyebrow{color:var(--accent);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:13px;margin-bottom:18px}
+    h1{font-family:Anton,sans-serif;font-size:clamp(58px,9vw,112px);line-height:.92;max-width:850px;text-transform:uppercase}
+    h1 span{color:var(--accent)}
+    .hero p{max-width:570px;color:#ddd;font-size:18px;margin:25px 0 30px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}.btn{padding:14px 21px;border-radius:7px;font-weight:800;font-size:14px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px}
+    .btn-primary{background:var(--accent);color:#080909;border-color:var(--accent)}.btn-dark{background:rgba(0,0,0,.38)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0d0f0f}
+    .stat{padding:25px;border-right:1px solid var(--line);text-align:center}.stat:last-child{border:0}.stat b{font-family:Anton;font-size:30px}.stat span{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px}
+    section{padding:95px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}.kicker{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}.section-title{font-family:Anton;font-size:clamp(42px,6vw,70px);line-height:.98;text-transform:uppercase;margin-top:8px}.section-copy{max-width:480px;color:var(--muted)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:var(--card);border:1px solid var(--line);padding:30px;border-radius:12px;transition:.3s}.feature:hover{transform:translateY(-6px);border-color:rgba(216,255,53,.45)}.icon{font-size:30px;margin-bottom:25px}.feature h3{font-size:19px;margin-bottom:9px}.feature p{color:var(--muted);font-size:14px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.imagebox{border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative}.imagebox img{height:560px;object-fit:cover}.imagebox:after{content:"M FITNESS";position:absolute;bottom:18px;left:18px;font-family:Anton;font-size:38px;color:var(--accent);letter-spacing:1px}
+    .checks{display:grid;gap:14px;margin:28px 0}.check{display:flex;gap:12px;align-items:start}.check i{font-style:normal;color:var(--accent);font-weight:900}.check span{color:#ddd}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.plan{background:var(--card);border:1px solid var(--line);padding:32px;border-radius:12px}.plan.featured{border:2px solid var(--accent);position:relative}.tag{position:absolute;right:18px;top:18px;background:var(--accent);color:#080909;padding:5px 9px;border-radius:5px;font-size:10px;font-weight:900}.plan h3{font-size:20px}.price{font-family:Anton;font-size:48px;margin:14px 0}.price small{font-family:Inter;font-size:13px;color:var(--muted);font-weight:500}.plan ul{list-style:none;display:grid;gap:10px;color:#bbb;font-size:14px;margin:20px 0 28px}.plan li:before{content:"✓";color:var(--accent);font-weight:900;margin-right:9px}
+    .gallery{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-auto-rows:230px;gap:12px}.gallery img{height:100%;object-fit:cover;border-radius:10px;filter:saturate(.9)}.gallery .tall{grid-row:span 2}
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:var(--card);border:1px solid var(--line);padding:28px;border-radius:12px}.stars{color:var(--accent);letter-spacing:2px}.review p{margin:16px 0;color:#ddd;font-size:15px}.review b{font-size:13px}
+    .cta{background:linear-gradient(110deg,#d8ff35,#b8e91e);color:#080909;border-radius:16px;padding:58px;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-family:Anton;font-size:clamp(38px,5vw,62px);line-height:1}.cta p{margin-top:10px;max-width:560px}.cta .btn{background:#080909;color:white;border-color:#080909}
+    .contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}.contact-card{background:var(--card);border:1px solid var(--line);padding:30px;border-radius:12px}.contact-row{padding:18px 0;border-bottom:1px solid var(--line)}.contact-row:last-child{border:0}.contact-row small{color:var(--muted);display:block;margin-bottom:5px}.map{min-height:390px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}.map iframe{width:100%;height:100%;min-height:390px;border:0;filter:grayscale(1) contrast(1.1)}
+    footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.footerin{display:flex;justify-content:space-between;gap:20px}
+    .float{position:fixed;right:18px;bottom:18px;z-index:60;background:#25d366;color:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:25px;box-shadow:0 10px 30px #0008}
+    @media(max-width:800px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:#0d0f0f;padding:20px;flex-direction:column}.navlinks.show{display:flex}.menu{display:block}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.features,.plans,.reviews,.split,.contact{grid-template-columns:1fr}.split{gap:30px}.imagebox img{height:420px}.section-head{display:block}.section-copy{margin-top:16px}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.gallery .tall{grid-row:span 1}.cta{padding:35px 25px;display:block}.cta .btn{margin-top:22px}.footerin{display:block}.footerin div+div{margin-top:8px}}
+  </style>
+</head>
+<body>
+  <div class="topbar">🔥 NEW MEMBERS — BOOK A FREE FITNESS CONSULTATION TODAY</div>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home">M <span>FITNESS</span></a>
+        <button class="menu" aria-label="Open menu" onclick="document.querySelector('.navlinks').classList.toggle('show')">☰</button>
+        <div class="navlinks">
+          <a href="#about">About</a><a href="#facilities">Facilities</a><a href="#plans">Plans</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+          <a class="navcta" href="tel:+918578034211">Join Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="eyebrow">Gondapur • Nawada • Bihar</div>
+        <h1>BUILD YOUR<br><span>STRONGER</span><br>SELF.</h1>
+        <p>Train with purpose. Build strength. Become the best version of yourself at M Fitness Gym — your local training destination in Gondapur.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="tel:+918578034211">☎ Call to Join</a>
+          <a class="btn btn-dark" href="#plans">View Memberships →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat"><b>4.3★</b><span>Google Rating</span></div>
+      <div class="stat"><b>20+</b><span>Local Reviews</span></div>
+      <div class="stat"><b>100%</b><span>Fitness Focused</span></div>
+      <div class="stat"><b>1</b><span>Strong Community</span></div>
+    </div>
+
+    <section id="facilities">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Why M Fitness</div><h2 class="section-title">TRAIN HARD.<br>TRAIN SMART.</h2></div><p class="section-copy">Everything you need to stay consistent, get stronger and make real progress — in a focused local gym environment.</p></div>
+        <div class="features">
+          <article class="feature"><div class="icon">🏋️</div><h3>Strength Training</h3><p>Build power and muscle with a focused strength-training environment and essential gym equipment.</p></article>
+          <article class="feature"><div class="icon">🔥</div><h3>Fat Loss & Fitness</h3><p>Work toward your fitness goals with structured workouts designed for consistency and progress.</p></article>
+          <article class="feature"><div class="icon">🎯</div><h3>Personal Guidance</h3><p>Get practical support and training guidance so you know what to do when you step onto the floor.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container split">
+        <div class="imagebox"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85" alt="Gym training"></div>
+        <div>
+          <div class="kicker">Your Fitness. Your Journey.</div><h2 class="section-title">NO EXCUSES.<br>JUST RESULTS.</h2>
+          <p class="section-copy" style="margin-top:20px">M Fitness Gym is built for people who are ready to stop making excuses and start working toward measurable fitness goals.</p>
+          <div class="checks">
+            <div class="check"><i>✓</i><span>Strength and resistance training</span></div>
+            <div class="check"><i>✓</i><span>Cardio and general fitness workouts</span></div>
+            <div class="check"><i>✓</i><span>Supportive and motivating environment</span></div>
+            <div class="check"><i>✓</i><span>Convenient local location in Gondapur</span></div>
+          </div>
+          <a class="btn btn-primary" href="#contact">Visit M Fitness →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Membership</div><h2 class="section-title">PICK YOUR<br>PLAN.</h2></div><p class="section-copy">Demo pricing is shown below. Replace these amounts with the gym's actual membership fees before publishing.</p></div>
+        <div class="plans">
+          <article class="plan"><h3>MONTHLY</h3><div class="price">₹999 <small>/ month</small></div><ul><li>Gym access</li><li>Basic workout guidance</li><li>Fitness floor access</li><li>Flexible start</li></ul><a class="btn btn-dark" href="tel:+918578034211">Enquire Now</a></article>
+          <article class="plan featured"><span class="tag">POPULAR</span><h3>QUARTERLY</h3><div class="price">₹2,499 <small>/ 3 months</small></div><ul><li>Full gym access</li><li>Workout guidance</li><li>Progress-focused training</li><li>Better value</li></ul><a class="btn btn-primary" href="tel:+918578034211">Join This Plan</a></article>
+          <article class="plan"><h3>YEARLY</h3><div class="price">₹7,999 <small>/ year</small></div><ul><li>Full gym access</li><li>Long-term fitness support</li><li>Workout guidance</li><li>Maximum value</li></ul><a class="btn btn-dark" href="tel:+918578034211">Enquire Now</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Inside The Gym</div><h2 class="section-title">THE WORK<br>STARTS HERE.</h2></div></div>
+        <div class="gallery">
+          <img class="tall" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=85" alt="Gym equipment">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85" alt="Weight training">
+          <img src="https://images.unsplash.com/photo-1584467735871-3e2f2f9c0f2a?auto=format&fit=crop&w=900&q=85" alt="Fitness training">
+          <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=900&q=85" alt="Workout">
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Member Love</div><h2 class="section-title">REAL PEOPLE.<br>REAL ENERGY.</h2></div></div>
+        <div class="reviews">
+          <article class="review"><div class="stars">★★★★★</div><p>“A solid local place to stay consistent with training. The environment is motivating.”</p><b>— M Fitness Member</b></article>
+          <article class="review"><div class="stars">★★★★★</div><p>“Good atmosphere and helpful training support. Great option around Gondapur.”</p><b>— Local Member</b></article>
+          <article class="review"><div class="stars">★★★★☆</div><p>“A convenient gym for regular strength and fitness workouts in Nawada.”</p><b>— Local Member</b></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta"><div><div class="kicker" style="color:#080909">START TODAY</div><h2>YOUR STRONGER<br>VERSION IS WAITING.</h2><p>Call now and ask about membership, timings and a visit.</p></div><a class="btn" href="tel:+918578034211">☎ +91 85780 34211</a></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">Find Us</div><h2 class="section-title">COME<br>TRAIN.</h2></div></div>
+        <div class="contact">
+          <div class="contact-card">
+            <div class="contact-row"><small>ADDRESS</small><b>VGMM+84F, Suleman Nagar, Ansar Nagar, Gondapur, Nawada, Bihar 805112</b></div>
+            <div class="contact-row"><small>PHONE</small><a href="tel:+918578034211"><b>+91 85780 34211</b></a></div>
+            <div class="contact-row"><small>LOCATION</small><b>Gondapur, Nawada, Bihar</b></div>
+            <div style="margin-top:20px"><a class="btn btn-primary" target="_blank" href="https://www.google.com/maps/search/?api=1&query=VGMM%2B84F%2C%20Suleman%20Nagar%2C%20Ansar%20Nagar%2C%20Gondapur%2C%20Nawada%2C%20Bihar%20805112">Get Directions ↗</a></div>
+          </div>
+          <div class="map"><iframe src="https://www.google.com/maps?q=VGMM%2B84F%2C%20Suleman%20Nagar%2C%20Ansar%20Nagar%2C%20Gondapur%2C%20Nawada%2C%20Bihar%20805112&output=embed" loading="lazy" title="M Fitness Gym location"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footerin"><div>© <span id="year"></span> M Fitness Gym. All rights reserved.</div><div>Designed for a stronger community • Gondapur, Nawada</div></div></footer>
+  <a class="float" href="https://wa.me/918578034211?text=Hello%20M%20Fitness%20Gym%2C%20I%20want%20to%20know%20about%20membership." target="_blank" aria-label="WhatsApp">◉</a>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('show')));</script>
+</body>
+</html>
